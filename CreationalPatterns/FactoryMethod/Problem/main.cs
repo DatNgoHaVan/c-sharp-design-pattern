@@ -32,7 +32,7 @@ namespace c_sharp_design_pattern.CreationalPatterns.FactoryMethod.Problem
                 // The condition to end the recursive is Leaf Item
                 foreach (Item item in ItemChildren)
                 {
-                    cost += item.Cost(); // Recursive call to Cost() for child items
+                    cost += item.Cost(); // Recursive call to Cost() for children items
                 }
             }
 

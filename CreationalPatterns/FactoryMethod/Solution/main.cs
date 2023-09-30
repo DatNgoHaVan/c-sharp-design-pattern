@@ -69,7 +69,7 @@ namespace CreationalPatterns.FactoryMethod.Solution
             shopeeCart.Add(iphone15);
 
             // Calculate and print the total cost
-            Console.WriteLine(rootBox.Cost());
+            Console.WriteLine(shopeeCart.Cost());
         }
     }
 }
