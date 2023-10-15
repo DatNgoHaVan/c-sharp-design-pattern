@@ -3,58 +3,58 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace c_sharp_design_pattern.CreationalPatterns.FactoryMethod.Problem
+namespace c_sharp_design_pattern.CreationalPatterns.FactoryMethod.Problem;
+
+// Item can be Box or Product
+// This make Naming Convention issue
+public class Item
 {
-    // Item can be Box or Product
-    // This make Naming Convention issue
-    public class Item
+    public string ItemName { get; set; }
+
+    // The Product has Price
+    // But the Box
+    public decimal Price { get; set; }
+
+    // The Item always has children
+    // But if a Leaf Item, there no children inside
+    // Only the Composite (Container) has children
+    // So this doesn't adhere the Composite DP
+    public List<Item> ItemChildren { get; set; }
+
+    public decimal Cost()
     {
-        public string ItemName { get; set; }
-
-        // The Product has Price
-        // But the Box
-        public decimal Price { get; set; }
-
-        // The Item always has children
-        // But if a Leaf Item, there no children inside
-        // Only the Composite (Container) has children
-        // So this doesn't adhere the Composite DP
-        public List<Item> ItemChildren { get; set; }
-
-        public decimal Cost()
+        decimal cost = Price;
+        // Cause the Children can be both Box or Product
+        // we must check the Item is Composite or Leaf by the Children
+        if (ItemChildren != null)
         {
-            decimal cost = Price;
-            // Cause the Children can be both Box or Product
-            // we must check the Item is Composite or Leaf by the Children
-            if (ItemChildren != null)
+            // Actually in this code we are doing a recursive to calculate the Cost
+            // The condition to end the recursive is Leaf Item
+            foreach (Item item in ItemChildren)
             {
-                // Actually in this code we are doing a recursive to calculate the Cost
-                // The condition to end the recursive is Leaf Item
-                foreach (Item item in ItemChildren)
-                {
-                    cost += item.Cost(); // Recursive call to Cost() for children items
-                }
+                cost += item.Cost(); // Recursive call to Cost() for children items
             }
-
-            return cost;
         }
+
+        return cost;
+    }
+}
+
+public class main
+{
+    static void Main(string[] args)
+    {
+        var package = CreateItemPackage();
+        Console.WriteLine(package.Cost());
     }
 
-    public class main
+    private static Item CreateItemPackage()
     {
-        static void Main(string[] args)
+        return new Item
         {
-            var package = CreateItemPackage();
-            Console.WriteLine(package.Cost());
-        }
-
-        private static Item CreateItemPackage()
-        {
-            return new Item
-            {
-                Name = "root box",
-                Price = 0,
-                Children = new List<Item>
+            Name = "root box",
+            Price = 0,
+            Children = new List<Item>
             {
                 new Item
                 {
@@ -83,7 +83,6 @@ namespace c_sharp_design_pattern.CreationalPatterns.FactoryMethod.Problem
                     }
                 }
             }
-            };
-        }
+        };
     }
 }
