@@ -1,18 +1,20 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace c_sharp_design_pattern.CreationalPatterns.FactoryMethod.Problem;
+namespace StructuralPatterns.Composite.Problem;
 
 // Item can be Box or Product
-// This make Naming Convention issue
+// The Box is not for sale, it's just a container, it will be Composite
+// The Product is for sale and it will be Leaf, so it has Price
+// This make the Item class is not clear about the Composite DP
 public class Item
 {
     public string ItemName { get; set; }
 
     // The Product has Price
-    // But the Box
+    // But the Box has no Price
     public decimal Price { get; set; }
 
     // The Item always has children
@@ -25,7 +27,7 @@ public class Item
     {
         decimal cost = Price;
         // Cause the Children can be both Box or Product
-        // we must check the Item is Composite or Leaf by the Children
+        // we must check the Item is Box (Composite) or Product (Leaf) by the Children
         if (ItemChildren != null)
         {
             // Actually in this code we are doing a recursive to calculate the Cost

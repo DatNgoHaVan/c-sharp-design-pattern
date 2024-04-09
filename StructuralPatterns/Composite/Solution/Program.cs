@@ -28,7 +28,7 @@ public class Box : ICommonItem
 {
     public string BoxName { get; set; }
     // ItemChildren can be a Box or a Product
-    private static List<ICommonItem> ItemChildren = new List<ICommonItem>();
+    private List<ICommonItem> ItemChildren = new List<ICommonItem>();
 
     public decimal Cost()
     {

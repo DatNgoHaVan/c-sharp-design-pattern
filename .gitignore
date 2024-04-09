@@ -398,5 +398,3 @@ FodyWeavers.xsd
 *.sln.iml
 
 # CSharp Proj
-*.sln
-*.csproj

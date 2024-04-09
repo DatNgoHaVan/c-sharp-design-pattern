@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StructuralPatterns", "StructuralPatterns", "{A6617C9B-80F8-4FB9-87D9-FA18494F3250}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Composite", "Composite", "{B7478473-2AC9-4CCE-ADBF-0250B3B1C862}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Problem", "StructuralPatterns\Composite\Problem\Problem.csproj", "{8A46BF87-E974-4B1B-A4B3-C98E8CB90E25}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Singleton", "Singleton", "{1AEFC4FE-5EA8-4B5C-918F-0C7A0143BB88}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Problem", "StructuralPatterns\Singleton\Problem\Problem.csproj", "{A34BA97C-24E4-4FD6-B720-2D66CE5F2332}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8A46BF87-E974-4B1B-A4B3-C98E8CB90E25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A46BF87-E974-4B1B-A4B3-C98E8CB90E25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A46BF87-E974-4B1B-A4B3-C98E8CB90E25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A46BF87-E974-4B1B-A4B3-C98E8CB90E25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A34BA97C-24E4-4FD6-B720-2D66CE5F2332}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A34BA97C-24E4-4FD6-B720-2D66CE5F2332}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A34BA97C-24E4-4FD6-B720-2D66CE5F2332}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A34BA97C-24E4-4FD6-B720-2D66CE5F2332}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B7478473-2AC9-4CCE-ADBF-0250B3B1C862} = {A6617C9B-80F8-4FB9-87D9-FA18494F3250}
+		{8A46BF87-E974-4B1B-A4B3-C98E8CB90E25} = {B7478473-2AC9-4CCE-ADBF-0250B3B1C862}
+		{1AEFC4FE-5EA8-4B5C-918F-0C7A0143BB88} = {A6617C9B-80F8-4FB9-87D9-FA18494F3250}
+		{A34BA97C-24E4-4FD6-B720-2D66CE5F2332} = {1AEFC4FE-5EA8-4B5C-918F-0C7A0143BB88}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6BEC4A33-9554-454E-81F0-99CE6806C89A}
+	EndGlobalSection
+EndGlobal
