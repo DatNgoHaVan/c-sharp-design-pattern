@@ -11,7 +11,7 @@ namespace StructuralPatterns.Composite.Problem;
 // This make the Item class is not clear about the Composite DP
 public class Item
 {
-    public string ItemName { get; set; }
+    public string Name { get; set; }
 
     // The Product has Price
     // But the Box has no Price
@@ -21,18 +21,18 @@ public class Item
     // But if a Leaf Item, there no children inside
     // Only the Composite (Container) has children
     // So this doesn't adhere the Composite DP
-    public List<Item> ItemChildren { get; set; }
+    public List<Item> Children { get; set; }
 
     public decimal Cost()
     {
         decimal cost = Price;
         // Cause the Children can be both Box or Product
         // we must check the Item is Box (Composite) or Product (Leaf) by the Children
-        if (ItemChildren != null)
+        if (Children != null)
         {
             // Actually in this code we are doing a recursive to calculate the Cost
             // The condition to end the recursive is Leaf Item
-            foreach (Item item in ItemChildren)
+            foreach (Item item in Children)
             {
                 cost += item.Cost(); // Recursive call to Cost() for children items
             }
@@ -61,7 +61,7 @@ public class main
                 new Item
                 {
                     Name = "Mouse",
-                    Price = 20.5f,
+                    Price = 20.5m,
                     Children = null // No clear distinction between leaf and composite
                 },
                 new Item
